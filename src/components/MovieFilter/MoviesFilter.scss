@@ -1,0 +1,84 @@
+.movies-filter {
+    // padding: 25px 0;
+    padding-top: 25px;
+}
+
+.movies-filter__body {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.form__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 100%;
+}
+
+.form-search__container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+}
+
+.form-search__body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+.search-input-wrap {
+    align-self: center;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.form-search-btn-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.form__search input[type='text'] {
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    // background-color: transparent;
+    font-size: 16px;
+    color: #333;
+    width: 200px;
+    flex-grow: 1;
+    height: 100%;
+    background-color: white;
+}
+
+.form__search button {
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form__search button:hover {
+    background-color: #0056b3;
+}
+
+
+.filter__actions {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
