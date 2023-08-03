@@ -11,10 +11,10 @@ export function SelectFilter({ options, initialValue = 'all', register, onSelect
 
 
 
-    const handleOptionSelect = (value) => {
+    const handleOptionSelect = ({id, name: value}) => {
         setSelectedValue(value);
         setDropdownOpen(false);
-        onSelect(value === "all" ? "" : value);
+        onSelect(value === "all" ? "" : id);
     };
 
     return (
@@ -36,7 +36,7 @@ export function SelectFilter({ options, initialValue = 'all', register, onSelect
                             <li
                                 key={option.id}
                                 className="option"
-                                onClick={() => handleOptionSelect(option.name)}
+                                onClick={() => handleOptionSelect({id: option.id, name: option.name})}
                             >
                                 {option.name}
                             </li>

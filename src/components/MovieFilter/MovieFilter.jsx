@@ -1,39 +1,15 @@
-import React, { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import React from 'react';
 
 import './MoviesFilter.scss';
 
 import { useGenre } from '../../hooks';
 import { SelectFilter } from '../SelectFilter/SelectFilter';
 
-const initialForm = {
-  // search: '',
-  with_genres: '',
-  primary_release_year: ''
-};
 
 export const MovieFilter = ({ dataForm }) => {
-  const { selectDataForm, setSelectDataForm } = dataForm
+  const {handleSubmit, register, handleSearchForm,  setSearchParams} = dataForm
+
   const { genres } = useGenre();
-  const { register, handleSubmit, setValue } = useForm();
-
-
-
-  useEffect(() => {
-    setValue('with_genres', selectDataForm.with_genres);
-    setValue('primary_release_year', selectDataForm.primary_release_year);
-
-    // handleSearchForm(selectDataForm);
-  }, [selectDataForm, setValue]);
-
-  const handleSearchForm = (data) => {
-    for (const [key, val] of Object.entries(data)) {
-      if (val === "") {
-        delete data[key]
-      }
-    }
-    // setSelectDataForm({ ...data })
-  };
 
   return (
     <section className="movies-filter">
@@ -55,7 +31,7 @@ export const MovieFilter = ({ dataForm }) => {
                     options={genres}
                     register={register}
                     onSelect={(value) => {
-                      setSelectDataForm((prevState) => ({ ...prevState, with_genres: value }))
+                      setSearchParams((prevState) => ({ ...prevState, with_genres: value }))
                       
                     }
 
@@ -65,7 +41,7 @@ export const MovieFilter = ({ dataForm }) => {
                     options={arrYears()}
                     register={register}
                     onSelect={(value) =>
-                      setSelectDataForm((prevState) => ({ ...prevState, primary_release_year: value }))
+                      setSearchParams((prevState) => ({ ...prevState, primary_release_year: value }))
 
                     }
                   />
